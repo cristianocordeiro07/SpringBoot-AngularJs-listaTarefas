@@ -14,7 +14,7 @@
   <p>JUnit: testes automatizados;</p>
   
   
-<h2> Pendências
+<h2> Pendências:</h2>
  <p>Implementar testes;</p>
  <p>Commitar APIs frontend no projeto (está baixando da web);</p>
  <p>Formatação de datas ao abrir tarefas;</p>
