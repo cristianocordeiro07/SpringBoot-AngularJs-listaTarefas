@@ -1,0 +1,71 @@
+<div id="modalTask" class="form-inline modal fade" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">{{editing ? 'Editar Tarefa' : 'Nova Tarefa'}}</h4>
+                <button type="button" class="close closeModalTask" data-dismiss="modal" aria-hidden="true">x</button>
+            </div>
+            <form name="addTask">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>Título</label>
+                            <input class="form-control" ng-model="task.title" ng-class="{invalidField: !controlValidateFields.title}" type="text" required/>
+                            <span class="text-error" data-ng-show="!controlValidateFields.title">{{controlValidateFields.messageTitle}}</span>
+                        </div>
+                    </div>
+                    <div class="row top-buffer">
+                        <div class="col-md-12">
+                            <label>Descrição</label>
+                            <textarea class="form-control" ng-class="{invalidField: !controlValidateFields.description}" ng-model="task.description" rows="8"></textarea>
+                            <span class="text-error" data-ng-show="!controlValidateFields.description">{{controlValidateFields.messageDescription}}</span>
+                        </div>
+                    </div>
+                    <div ng-if="editing" class="row top-buffer">
+                        <div class="col-md-6 date" >
+                            <label>Data de criação</label>
+                            <input class="form-control" ng-model="task.creationDate" type="text" disabled />
+                        </div>
+                        <div class="col-md-6">
+                            <label>Data de conclusão</label>
+                            <input class="form-control" ng-model="task.finishDate" type="text" disabled/>
+                        </div>
+                    </div>
+                    <div ng-if="editing" class="row top-buffer">
+                        <div class="col-md-6">
+                            <label>Status</label>
+                            <input class="form-control" ng-model="task.status" format-status type="text" disabled/>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="modal-footer">
+                <button ng-if="editing" type="button" class="btn btn-danger pull-left" ng-click="confirmDeleteTask()">Excluir Tarefa</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-success" ng-click="saveTask()">Salvar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="modalConfirmDelete" class="form-inline modal fade" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Confirmar Exclusão</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <b>Tem certeza que deseja excluir a tarefa?</b>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" ng-click="closeModalConfirmDeleteTask()">Cancelar</button>
+                <button type="button" class="btn btn-danger" ng-click="deleteTask()">Excluir Tarefa</button>
+            </div>
+        </div>
+    </div>
+</div>

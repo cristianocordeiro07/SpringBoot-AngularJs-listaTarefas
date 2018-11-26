@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html ng-app="appTaskList">
+<head>
+    <meta charset="UTF-8">
+
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="./css/taskList.css">
+
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+    <script src="./js/taskListController.js"></script>
+
+    <title>Lista de Tarefas</title>
+</head>
+<body ng-controller="taskListController">
+
+<div class="content">
+    <h1>Lista de Tarefas</h1>
+    <button type="button" class="btn btn-default btnNewTask" ng-click="openModalTask(null)">Nova Tarefa</button>
+    <br><br>
+</div>
+
+<div id="page">
+    <div id="workarea">
+        <div id="tasks">
+            <div id="task-1" class="task-panel">
+                <h4 class="task-name">Pendentes</h4>
+                <div id="TODO" class="task-list">
+                    <div ng-repeat="task in taskToDo">
+                        <div drag-drop id="{{task.id}}" class="task" draggable="true">
+                            <a ng-click="openModalTask(task)" class="taskTitle">{{task.title}}</a>
+                        </div>
+                    </div>
+                    <div drag-drop draggable="false" ng-show="taskToDo.length === 0" class="task div-no-task">
+                        <div>
+                            <a class="no-one-task">Nenhuma tarefa.</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="task-2" class="task-panel">
+                <h4 class="task-name">Em progresso</h4>
+                <div id="IN_PROGRESS" class="task-list">
+                    <div ng-repeat="task in taskInProgress">
+                        <div drag-drop id="{{task.id}}" class="task" draggable="true">
+                            <a ng-click="openModalTask(task)" class="taskTitle">{{task.title}}</a>
+                        </div>
+                    </div>
+                    <div drag-drop draggable="false" ng-show="taskInProgress.length === 0" class="task div-no-task">
+                        <div>
+                            <a class="no-one-task">Nenhuma tarefa.</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="task-3" class="task-panel">
+                <h4 class="task-name">Concluídas</h4>
+                <div id="DONE" class="task-list">
+                    <div ng-repeat="task in taskDone">
+                        <div drag-drop id="{{task.id}}" class="task" draggable="true">
+                            <a ng-click="openModalTask(task)" class="taskTitle">{{task.title}}</a>
+                        </div>
+                    </div>
+                    <div drag-drop draggable="false" ng-show="taskDone.length === 0" class="task div-no-task">
+                        <div>
+                            <a class="no-one-task">Nenhuma tarefa.</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div ng-include="'./view/modalTask.html'"></div>
+</body>
+</html>

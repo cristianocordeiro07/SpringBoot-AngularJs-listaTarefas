@@ -1,0 +1,128 @@
+/* latin */
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v14/S6uyw4BMUTPHjx4wXg.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+body {
+    background-color: #eaeaea;
+    color: #333;
+    font-family: Lato;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+[contenteditable="true"]:focus {
+    outline: 1px solid black;
+}
+
+h1 {
+    margin: 20px;
+    text-align: left;
+    color: #DA4453;
+}
+
+a {
+    color: #e8273b;
+    transition: all 0.3s ease-in-out;
+}
+
+a:not(.no-one-task):hover {
+    color: #c71528;
+    text-shadow: 0px 0px 12px #ED5565;
+}
+
+.no-one-task{
+    cursor: default;
+    color: #e8273b !important;
+    transition: none !important;
+}
+
+.no-one-task:hover{
+    text-decoration: none !important;
+}
+
+#page {
+    width: 100%;
+}
+
+#tasks {
+    width: 100%;
+    float: left;
+    margin-left: 20px;
+}
+
+#tasks h3 {
+    text-align: right;
+}
+
+.task-panel {
+    display: inline-block;
+    padding: 8px;
+    width: 32%;
+    vertical-align: top;
+    background-color: #fff;
+    border-radius: 3px;
+}
+
+.task-name.over ~ .task-list {
+    border: 3px dashed #dadada;
+}
+
+.task-list {
+    position: relative;
+    margin: 10px 0px 0px 0px;
+}
+
+.task {
+    position: relative;
+    background-color: #eaeaea;
+    text-align: left;
+    padding: 5px;
+    margin: 0px 0px 1px 0px;
+    border: 1px solid #dadada;
+    border-width: 1px 1px 0px 1px;
+}
+
+.task:last-child {
+    border-width: 1px;
+}
+
+.task.over {
+    border-top: 3px dashed #dadada;
+}
+
+.btnNewTask {
+    margin-left: 20px;
+}
+
+.top-buffer {
+    margin-top: 20px;
+}
+
+.closeModalTask {
+    margin-top: -30px !important;
+}
+
+.taskTitle {
+    cursor: pointer;
+    color: #808080;
+}
+
+.div-no-task {
+    background-color: #fff;
+    border: 1px #fff solid;
+}
+
+.to-drop {
+    border-width: 4px;
+    border-style: dashed;
+    border-color: #DA4453;
+}
+
+.invalidField
+{
+    border:1px solid #f00;
+}
