@@ -12,13 +12,3 @@
   <p>Lombok: redução de código (ao abrir na IDE, necessário baixar plugin);</p>
   <p>Swagger: documentação (http://localhost:8081/swagger-ui.html);</p>
   <p>JUnit: testes automatizados;</p>
-  
-  
-<h2> Pendências:</h2>
- <p>Implementar testes;</p>
- <p>Commitar APIs frontend no projeto (está baixando da web);</p>
- <p>Formatação de datas ao abrir tarefas;</p>
- <p>Melhorias em layout;</p>
- 
- 
-  
