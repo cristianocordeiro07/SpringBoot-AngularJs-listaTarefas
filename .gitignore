@@ -1,1 +1,4 @@
 /.idea/.gitignore
+/.idea/compiler.xml
+/.idea
+/taskList.iml
